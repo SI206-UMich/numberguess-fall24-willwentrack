@@ -38,15 +38,17 @@ class DigitalBookofAnswers():
 
   
     def check_get_answer(self, question):
+        
         for i in range(len(self.questions_asked_list)):
             if self.questions_asked_list[i] == question:
-                answer = self.book_answer_list[self.answered_list[i]]
-                return f"I've already answered this question. The answer is: {answer}"
+                question_asnwer = self.book_answer_list[self.answered_list[i]]
+                return f"I've already answered this question. The answer is: {question_asnwer}"
+            
         answer_index = random.randint(0, len(self.book_answer_list) - 1)
         self.answered_list.append(answer_index)
         self.questions_asked_list.append(question)
-        answer = self.book_answer_list[answer_index]
-        return answer
+        question_answer = self.book_answer_list[answer_index]
+        return question_answer
 
 
     # Creates open_book method
