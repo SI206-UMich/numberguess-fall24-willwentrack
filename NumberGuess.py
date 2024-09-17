@@ -1,6 +1,6 @@
 import random
 class NumberGuess:
-    # TESTING TESTING TESTING PLEASE WORK
+    # TESTING WOOHOOWOOHOO
     def __init__(self):
         self.number = random.randint(1, 100)
         self.guess = -1
