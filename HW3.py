@@ -9,23 +9,25 @@
 # create a Digital Book of Answers
 class DigitalBookofAnswers():
 
-    # create the constructor (__init__) method 
-    # ARGUMENTS: 
-    #       self: the current object
-    #       answers: a list of potential answers
-    # RETURNS: None
+
     def __init__(self, answers):
+        self.book_answer_list = answers  
+        self.questions_asked_list = []
+        self.answered_list = []  
 
-        pass
 
-
-    # Create the __str__ method
-    # ARGUMENTS: 
-    #       self: the curent object
-    # RETURNS: a string
+ 
     def __str__(self):
 
-        pass
+        if self.book_answer_list == []:
+            return ""
+        
+        answer_str = ""
+        for i in range(len(self.book_answer_list)):
+            if i > 0:
+                answer_str = answer_str + " - "
+            answer_str = answer_str + self.book_answer_list[i]
+        return answer_str
 
     # Creates the check_get_answer method
     # ARGUMENTS:
