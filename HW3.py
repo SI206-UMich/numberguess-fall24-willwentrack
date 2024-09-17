@@ -7,6 +7,12 @@
 # Asked Chatgpt hints for debugging and suggesting the general sturcture of the code
 
 # create a Digital Book of Answers
+
+
+
+import random
+
+
 class DigitalBookofAnswers():
 
 
@@ -29,14 +35,19 @@ class DigitalBookofAnswers():
             answer_str = answer_str + self.book_answer_list[i]
         return answer_str
 
-    # Creates the check_get_answer method
-    # ARGUMENTS:
-    #       self: the current object
-    #       question: the question the user wants to ask the digital book of answers
-    # RETURNS: a string
-    def check_get_answer(self, question):
 
-        pass
+  
+    def check_get_answer(self, question):
+        for i in range(len(self.questions_asked_list)):
+            if self.questions_asked_list[i] == question:
+                answer = self.book_answer_list[self.answered_list[i]]
+                return f"I've already answered this question. The answer is: {answer}"
+        answer_index = random.randint(0, len(self.book_answer_list) - 1)
+        self.answered_list.append(answer_index)
+        self.questions_asked_list.append(question)
+        answer = self.book_answer_list[answer_index]
+        return answer
+
 
     # Creates open_book method
     # ARGUMENTS:
